@@ -811,7 +811,7 @@ async function runAiEdit() {
   document.getElementById('apply-row').className = 'apply-row';
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
-method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },      body: JSON.stringify({
+method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },      body: JSON.stringify({
         model: 'claude-sonnet-4-20250514', max_tokens: 1000,
         system: `당신은 기업 내부 매뉴얼 편집 전문가입니다. 수정 사항을 반영한 새 매뉴얼 섹션을 작성하세요.\n출력: JSON 배열만 반환. [{"icon":"ti-아이콘명","title":"섹션 제목","body":"HTML"}]\n마크다운 코드블록 없이 순수 JSON만 출력.`,
         messages: [{ role: 'user', content: `섹션: ${s.title}\n현재 내용:\n${currentText}\n\n수정 지시: ${instruction}${attachedFileText ? '\n\n' + attachedFileText : ''}` }]
